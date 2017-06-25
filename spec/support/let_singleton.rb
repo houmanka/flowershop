@@ -30,5 +30,33 @@ class LetSingleton
         ]
     end
 
+    def all_of_combinations
+        [ [2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 8], [2, 2, 5, 5] ]
+    end
+
+    def package_combination_feed
+        {
+            :packs => [8,5,2],
+            :qty => 14
+        }
+    end
+
+    def single_pack
+        Order.fetch_from_inventory(sample_orders[:valid_orders].first)
+    end
+
+    def sample_order_ready
+        {:summery=>{:total=>25.85, :sku_number=>"T58", :qty=>"13"}, :line_items=>[{:qty=>1, :pack=>3, :each_pack=>5.95}, {:qty=>2, :pack=>5, :each_pack=>9.95}]}
+    end
+
+    def sample_product
+        [
+            {:pack=>2, :price=>9.95},
+            {:pack=>5, :price=>16.95},
+            {:pack=>8, :price=>24.95},
+            {:code=>"T58"}
+        ]
+    end
+
 
 end
