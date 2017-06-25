@@ -39,7 +39,7 @@ class Order
     # @return [String]
 
     def fulfill_order
-        return ''
+        return Order.format_order(process_customer_order)
     end
 
     # collection of the User Order
@@ -50,9 +50,18 @@ class Order
 
     def process_customer_order
 
+        result = []
+        customer_order.each do |an_order|
 
+            # fetch what we have got from inventory for this order
+            inventory_detail = Order.fetch_from_inventory(an_order)
 
-        return []
+            # run the calculator and add it to this
+            result << Order.calculate(inventory_detail, an_order)
+
+        end
+
+        return result
     end
 
 end

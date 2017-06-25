@@ -51,6 +51,7 @@ describe Order do
 
         # this behavior needs to be tested at the application. As it is the user output
         it 'expect to return String' do
+            expect(order.fulfill_order).to be_instance_of(Array)
         end
 
     end
