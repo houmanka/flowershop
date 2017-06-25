@@ -21,8 +21,8 @@ describe OrderCalculator do
 
 
     # this calculation method return always have the hash summary at first
-    # - [ { total: 17.98, sku_number: 'R12', qty: 14 }, [ { qty: 1, pack: 5, each_pack: 8.99}, { qty: 3, pack: 3, each_pack: 8.99} ] ]
-    # - ( [{:pack=>2, :price=>9.95}, {:pack=>5, :price=>16.95}], '14 L09' )
+    # - [ { total: 17.98, sku_number: 'VS5', qty: 14 }, [ { qty: 1, pack: 5, each_pack: 8.99}, { qty: 3, pack: 3, each_pack: 8.99} ] ]
+    # - ( [{:pack=>2, :price=>9.95}, {:pack=>5, :price=>16.95}], '14 MB11' )
     it 'expects to process the order in correct format return'  do
         process_the_order = @order_class.calculate(singleton.single_pack, singleton.sample_orders[:valid_orders].first)
         expect( process_the_order.first[:summery] ).to include( :total, :sku_number, :qty )

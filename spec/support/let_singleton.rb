@@ -12,7 +12,7 @@ class LetSingleton
 
     def sample_orders
         {
-            valid_orders: ['10 R12', '15 L09', '13 T58'],
+            valid_orders: [ '15 L09', '13 T58', '10 R12'],
             invalid_orders: [ '12 R*12', nil, ' ABM', '12 T58F' ],
             invalid_number_format:  ['111', '', nil],
             valid_product_hash: {:qty => '15', :code => 'L09'},
@@ -40,6 +40,10 @@ class LetSingleton
             :qty => 14
         }
     end
+
+    # {:pack=>5, :price=>6.99}
+    # {:pack=>10, :price=>12.99}
+    # {:code=>"R12"}
 
     def single_pack
         Order.fetch_from_inventory(sample_orders[:valid_orders].first)
