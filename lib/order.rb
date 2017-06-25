@@ -53,7 +53,7 @@ class Order
     #
     # @param
     # @return [Array<Hash>]
-    #   sample - [ { total: 17.98, sku_number: 'VS5', qty: 14 }, [ { qty: 1, pack: 5, each_pack: 8.99}, { qty: 3, pack: 3, each_pack: 8.99}]]
+    #   sample - [ { total: 17.98, sku_number: 'R12', qty: 14 }, [ { qty: 1, pack: 5, each_pack: 8.99}, { qty: 3, pack: 3, each_pack: 8.99}]]
 
     def process_customer_order
 

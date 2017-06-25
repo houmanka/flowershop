@@ -8,7 +8,7 @@ module OrderCalculator
     # @note Good candidate for refactoring into another module and a class method
     # @param [Array<Hash>, String]
     # @return [<Array<Hash>]
-    #   sample - [{:summery=>{:total=>43.85, :sku_number=>"MB11", :qty=>"12"}, :line_items=>[{:qty=>1, :pack=>2, :each_pack=>9.95}, {:qty=>2, :pack=>5, :each_pack=>16.95}]}]
+    #   sample - [{:summery=>{:total=>43.85, :sku_number=>"L09", :qty=>"12"}, :line_items=>[{:qty=>1, :pack=>2, :each_pack=>9.95}, {:qty=>2, :pack=>5, :each_pack=>16.95}]}]
 
     def calculate(single_pack, order)
 
@@ -106,7 +106,7 @@ module OrderCalculator
     #
     # @param [Array<Array>,Array<Hash>]
     #   sample - combination: [ [2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 8], [2, 2, 5, 5] ],
-    #   sample - single_pack = [ {:pack=>2, :price=>9.95}, {:pack=>5, :price=>16.95}, {:code=>"VS5"} ]
+    #   sample - single_pack = [ {:pack=>2, :price=>9.95}, {:pack=>5, :price=>16.95}, {:code=>"L09"} ]
     # @return:
     #   sample - {:total=>53.8, :best_combination=>{2=>2, 5=>2}}
     # @reference: http://ruby-doc.org/stdlib-2.4.0/libdoc/matrix/rdoc/Matrix.html
