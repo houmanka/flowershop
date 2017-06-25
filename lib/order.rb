@@ -1,8 +1,15 @@
+# @author Houman Kargaran - 2017
+# This is the core of the application. It has some workers to process the data.
+
+require 'validation'
 require 'inventory'
+require 'order_worker'
+require 'order_calculator'
 
 class Order
 
     extend OrderWorker
+    extend OrderCalculator
 
     def initialize
         @customer_order = []
