@@ -31,19 +31,15 @@ class LetSingleton
     end
 
     def all_of_combinations
-        [ [2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 8], [2, 2, 5, 5] ]
+        [ [3, 3, 3, 3, 3], [3, 3, 3, 6], [3, 3, 9], [3, 6, 6], [6, 9]]
     end
 
     def package_combination_feed
         {
-            :packs => [8,5,2],
-            :qty => 14
+            :packs => [9,6,3],
+            :qty => 15
         }
     end
-
-    # {:pack=>5, :price=>6.99}
-    # {:pack=>10, :price=>12.99}
-    # {:code=>"R12"}
 
     def single_pack
         Order.fetch_from_inventory(sample_orders[:valid_orders].first)
